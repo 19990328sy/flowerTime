@@ -9,20 +9,18 @@ import com.ruoyi.work.mapper.StorageMapper;
 import com.ruoyi.work.service.StorageService;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class StorageServiceImpl extends ServiceImpl<StorageMapper,Storage> implements StorageService {
 
-
     @Override
     public List<Storage> storageList(Storage storage) {
         LambdaQueryWrapper<Storage> wrapper = new LambdaQueryWrapper<Storage>()
                 .eq(Storage::getDelFlag,"0")
-                .eq(StringUtils.isEmpty(storage.getWarehouseno()),Storage::getWarehouseno,storage.getWarehouseno())
-                .like(StringUtils.isEmpty(storage.getWarehousename()), Storage::getWarehousename, storage.getWarehousename());
+                .eq(StringUtils.isNotEmpty(storage.getWarehouseNo()),Storage::getWarehouseNo,storage.getWarehouseNo())
+                .like(StringUtils.isNotEmpty(storage.getWarehouseName()), Storage::getWarehouseName, storage.getWarehouseName());
         List<Storage> list = list(wrapper);
         return list;
     }
@@ -35,7 +33,7 @@ public class StorageServiceImpl extends ServiceImpl<StorageMapper,Storage> imple
         }
         LambdaQueryWrapper<Storage> wrapper = new LambdaQueryWrapper<Storage>()
                 .eq(Storage::getDelFlag, "0")
-                .eq(StringUtils.isNotEmpty(storage.getWarehouseno()),Storage::getWarehouseno,storage.getWarehouseno())
+                .eq(StringUtils.isNotEmpty(storage.getWarehouseNo()),Storage::getWarehouseNo,storage.getWarehouseNo())
                 ;
         List<Storage> list = list(wrapper);
         if (list.size()>0){
@@ -52,11 +50,11 @@ public class StorageServiceImpl extends ServiceImpl<StorageMapper,Storage> imple
     public int update(Storage storage) {
         LambdaQueryWrapper<Storage> wrapper = new LambdaQueryWrapper<Storage>()
                 .eq(Storage::getDelFlag, "0")
-                .eq(StringUtils.isNotEmpty(storage.getWarehouseno()),Storage::getWarehouseno,storage.getWarehouseno())
+                .eq(StringUtils.isNotEmpty(storage.getWarehouseNo()),Storage::getWarehouseNo,storage.getWarehouseNo())
                 ;
         List<Storage> list = list(wrapper);
         for (Storage newStorage : list) {
-            if (!newStorage.getId().equals(storage.getId()) && newStorage.getWarehouseno().equals(storage.getWarehouseno())){
+            if (!newStorage.getId().equals(storage.getId()) && newStorage.getWarehouseNo().equals(storage.getWarehouseNo())){
                 throw new RuntimeException("该仓库编码重复，请重新修改！！！");
             }
         }

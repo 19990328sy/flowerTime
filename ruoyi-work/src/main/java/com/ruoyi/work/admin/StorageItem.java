@@ -12,7 +12,7 @@ public class StorageItem extends BaseEntity {
     /**
      * id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 物料编码

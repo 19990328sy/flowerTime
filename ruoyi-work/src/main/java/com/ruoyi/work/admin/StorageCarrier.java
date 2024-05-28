@@ -3,6 +3,7 @@ package com.ruoyi.work.admin;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.ruoyi.common.core.domain.BaseEntity;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
@@ -15,12 +16,13 @@ public class StorageCarrier extends BaseEntity {
     /**
      * id
      */
-    private Integer id;
+    @Id
+    private Long id;
 
     /**
      * 物流编码
      */
-    private Integer carrierNo;
+    private String carrierNo;
 
     /**
      * 物流名称

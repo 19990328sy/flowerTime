@@ -2,28 +2,29 @@ package com.ruoyi.work.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ruoyi.work.admin.Storage;
+import com.ruoyi.work.admin.StorageSupplier;
 
 import java.util.List;
 
-public interface StorageSupplierService extends IService<Storage> {
-    List<Storage> storageList(Storage storage);
+public interface StorageSupplierService extends IService<StorageSupplier> {
+    List<StorageSupplier> supplierList(StorageSupplier supplier);
 
     /**
-     * 新增仓库信息
-     * @param storage
+     * 新增供应商信息
+     * @param supplier
      * @return
      */
-    int add(Storage storage);
+    int add(StorageSupplier supplier);
 
     /**
-     * 修改仓库信息
-     * @param storage
+     * 修改供应商信息
+     * @param supplier
      * @return
      */
-    int update(Storage storage);
+    int update(StorageSupplier supplier);
 
     /**
-     * 删除仓库
+     * 删除供应商
      * @param ids
      * @return
      */

@@ -59,3 +59,13 @@ spring:
                 wall:
                     config:
                         multi-statement-allow: true
+    # activiti7配置
+#    activiti:
+#        # 建表策略，可选值：true,false,create-drop,drop-create
+#        database-schema-update: true
+#        # 自动部署检查，默认校验resources下的processes文件夹里的流程文件
+#        check-process-definitions: false
+#        # 保存历史数据等级，可选值：none,activity,audit,full
+#        history-level: full
+#        # 检测历史表是否存在
+#        db-history-used: true

@@ -10,17 +10,17 @@ public class StorageSupplier extends BaseEntity {
     /**
      * 供应商id
      */
-    private Integer id;
+    private Long id;
 
     /**
      * 供应商编码
      */
-    private Integer supplierNo;
+    private String supplierNo;
 
     /**
      * 供应商名称
      */
-    private Integer supplierName;
+    private String supplierName;
 
     /**
      * 联系人

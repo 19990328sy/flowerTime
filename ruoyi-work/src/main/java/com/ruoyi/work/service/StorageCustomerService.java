@@ -2,28 +2,29 @@ package com.ruoyi.work.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ruoyi.work.admin.Storage;
+import com.ruoyi.work.admin.StorageCustomer;
 
 import java.util.List;
 
-public interface StorageCustomerService extends IService<Storage> {
-    List<Storage> storageList(Storage storage);
+public interface StorageCustomerService extends IService<StorageCustomer> {
+    List<StorageCustomer> customerList(StorageCustomer customer);
 
     /**
-     * 新增仓库信息
-     * @param storage
+     * 新增客户信息
+     * @param customer
      * @return
      */
-    int add(Storage storage);
+    int add(StorageCustomer customer);
 
     /**
-     * 修改仓库信息
-     * @param storage
+     * 修改客户信息
+     * @param customer
      * @return
      */
-    int update(Storage storage);
+    int update(StorageCustomer customer);
 
     /**
-     * 删除仓库
+     * 删除客户
      * @param ids
      * @return
      */

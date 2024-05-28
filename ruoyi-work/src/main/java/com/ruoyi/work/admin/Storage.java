@@ -8,7 +8,7 @@ import lombok.Data;
  * 仓库表
  */
 @Data
-@TableName("s_warehouse")
+@TableName("s_storage")
 public class Storage extends BaseEntity {
 
     /**
@@ -19,12 +19,12 @@ public class Storage extends BaseEntity {
     /**
      * 仓库编码
      */
-    private String warehouseno;
+    private String warehouseNo;
 
     /**
      * 仓库名称
      */
-    private String warehousename;
+    private String warehouseName;
 
     /**
      * del_falg
