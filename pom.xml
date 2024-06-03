@@ -99,6 +99,13 @@
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
             </dependency>
+            <!--poi_tl工具类-->
+            <dependency>
+                <groupId>com.deepoove</groupId>
+                <artifactId>poi-tl</artifactId>
+                <version>1.10.3</version>
+            </dependency>
+
 
             <!-- velocity代码生成使用模板 -->
             <dependency>
